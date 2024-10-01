@@ -1,0 +1,15 @@
+@use './variables' as *;
+
+@mixin media($width, $type: min) {
+  @media screen and (#{$type}-width: $width) {
+    @content;
+  }
+}
+
+@mixin undraggable {
+  user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  user-drag: none;
+}

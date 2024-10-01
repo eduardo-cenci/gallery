@@ -1,0 +1,33 @@
+@use '../abstracts/variables' as *;
+
+.masonry {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(15rem, 100%), 1fr));
+  grid-auto-rows: 1px;
+  column-gap: 1.5rem;
+  transition: opacity 1s ease-in-out;
+
+  &--hidden {
+    opacity: 0;
+  }
+
+  &__item {
+    height: fit-content;
+  }
+
+  &__content {
+    padding-bottom: 1.5rem;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    border-radius: 1rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+  }
+
+  &__description {
+    font-weight: bold;
+  }
+}

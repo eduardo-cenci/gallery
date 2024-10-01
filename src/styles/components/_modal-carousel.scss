@@ -1,0 +1,77 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.modal-carousel {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  backdrop-filter: blur(0.5rem) brightness(0.25);
+  color: $color-2;
+  opacity: 0;
+  visibility: hidden;
+  transition-property: opacity, visibility;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__list {
+    position: relative;
+    display: flex;
+    cursor: grab;
+
+    &.move {
+      cursor: grabbing;
+    }
+
+    &.shifting {
+      transition: left 0.2s ease-in-out;
+    }
+  }
+
+  &__item,
+  &__img {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  &__img {
+    padding: 4rem;
+    object-fit: contain;
+    @include undraggable;
+  }
+
+  &__close,
+  &__control {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+  }
+
+  &__close {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  &__control {
+    top: 50%;
+    transform: translateY(-50%);
+
+    &[data-modal-carousel='prev'] {
+      left: 1rem;
+    }
+
+    &[data-modal-carousel='next'] {
+      right: 1rem;
+    }
+  }
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -1,0 +1,31 @@
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+
+@import 'base/reset';
+@import 'base/typography';
+
+@import 'components/masonry';
+@import 'components/modal-carousel';
+
+html {
+  font-family: 'Roboto';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.2;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: $color-1;
+  background-color: $color-2;
+  padding: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+svg {
+  fill: currentColor;
+}
